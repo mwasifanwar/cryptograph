@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="card">
+        <h3><i class="fas fa-search"></i> Address Analysis</h3>
+        <form id="addressForm">
+            <input type="text" id="addressInput" placeholder="Enter Ethereum address (0x...)" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3><i class="fas fa-upload"></i> Batch Analysis</h3>
+        <form id="batchForm" enctype="multipart/form-data">
+            <input type="file" id="batchFile" accept=".csv" required>
+            <button type="submit">Upload & Analyze</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3><i class="fas fa-chart-bar"></i> Real-time Detection</h3>
+        <button id="realTimeBtn">Start Monitoring</button>
+    </div>
+</div>
+
+<div id="results" class="results-container" style="display: none;">
+</div>
+{% endblock %}
